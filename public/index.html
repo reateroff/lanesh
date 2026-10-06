@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Загрузите изображение и получите короткую ссылку на 7 дней.">
+  <title>LANESH — быстрая загрузка изображений</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header class="header">
+      <a class="brand" href="/" aria-label="LANESH — главная">
+        <span class="brandMark">L</span>
+        LANESH
+      </a>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">Быстро. Без регистрации.</div>
+      <h1>Короткая ссылка<br>на изображение</h1>
+      <p class="subtitle">Загрузите картинку — мы сохраним её на 7 дней и сразу дадим прямую ссылку.</p>
+
+      <div class="dropzone" id="dropzone">
+        <input id="fileInput" type="file" accept="image/png,image/jpeg,image/gif,image/webp,image/avif,image/bmp,image/tiff,image/x-icon">
+        <div class="uploadIcon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4" /></svg>
+        </div>
+        <strong id="uploadTitle">Перетащите изображение сюда</strong>
+        <span id="fileMeta">PNG, JPG, GIF, WebP и другие · до 5 МБ</span>
+        <button id="selectButton" type="button">Выбрать файл</button>
+      </div>
+
+      <div class="message error" id="error" role="alert" hidden></div>
+
+      <div class="result" id="result" aria-live="polite" hidden>
+        <div class="preview"><img id="preview" alt="Загруженное изображение"></div>
+        <div class="resultBody">
+          <span class="success">Готово · ссылка активна 7 дней</span>
+          <div class="linkRow">
+            <input id="resultUrl" readonly aria-label="Короткая ссылка">
+            <button id="copyButton" type="button">Копировать</button>
+          </div>
+          <a id="openLink" target="_blank" rel="noreferrer">Открыть изображение ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <footer><span>До 5 МБ</span><span>Автоудаление через 7 дней</span></footer>
+  </main>
+</body>
+</html>
